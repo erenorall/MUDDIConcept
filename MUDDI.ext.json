@@ -1,0 +1,150 @@
+{
+    "type": "CityJSONExtension",
+    "name": "MUDDI",
+    "description": "Extension for model for underground data definition and integration including objects, assets and legal spaces.",
+    "url": "https://raw.githubusercontent.com/erenorall/cityjson-extension-muddi/main/MUDDI.ext.json",
+    "version": "1.0",
+    "versionCityJSON": "2.0",
+
+    "extraCityObjects":
+    {
+        "+MUDDIObject":
+        {
+            "allOf": [
+                {
+                    "$ref": "cityobjects.schema.json#/_AbstractCityObject"
+                },
+                {
+                    "properties":
+                    {
+                        "attributes":
+                        {
+                            "type": "object",
+                            "properties":
+                            {
+                                "objectID": { "type": "string" },
+                                "recordID": { "type": "string" },
+                                "systemID": { "type": "string" }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+
+        "+MUDDIAsset":
+        {
+            "allOf": [
+                {
+                    "$ref": "#/extraCityObjects/+MUDDIObject"
+                },
+                {
+                    "properties":
+                    {
+                        "type":
+                        {
+                            "enum": [
+                                "+MUDDIAsset"
+                            ]
+                        },
+                        "attributes":
+                        {
+                            "type": "object",
+                            "properties":
+                            {
+                                "diameter": { "type": "number" },
+                                "elevation": { "type": "number" },
+                                "assetOwnerID":
+                                {
+                                    "type": "string",
+                                    "enum": [
+                                        "municipality",
+                                        "government",
+                                        "private"
+                                    ]
+                                },
+                                "AssetID": { "type": "number" },
+                                "objectID": { "type": "string" },
+                                "recordID": { "type": "string" },
+                                "systemID": { "type": "string" }
+                            }
+                        },
+                        "geometry":
+                        {
+                            "type": "array",
+                            "items":
+                            {
+                                "oneOf": [
+                                    {
+                                        "$ref": "geomprimitives.schema.json#/Solid"
+                                    },
+                                    {
+                                        "$ref": "geomprimitives.schema.json#/MultiSurface"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "geometry"
+                    ]
+                }
+            ]
+        },
+
+        "+MUDDISpace":
+        {
+            "allOf": [
+                {
+                    "$ref": "#/extraCityObjects/+MUDDIObject"
+                },
+                {
+                    "properties":
+                    {
+                        "type":
+                        {
+                            "enum": [
+                                "+MUDDISpace"
+                            ]
+                        },
+                        "attributes":
+                        {
+                            "type": "object",
+                            "properties":
+                            {
+                                "extent": { "type": "string" },
+                                "legalBuffer": { "type": "number" },
+                                "spaceType": { "type": "string" },
+                                "legalBasis": { "type": "number" },
+                                "relatedAssetID": { "type": "string" },
+                                "objectID": { "type": "string" },
+                                "recordID": { "type": "string" },
+                                "systemID": { "type": "string" }
+                            }
+                        },
+                        "geometry":
+                        {
+                            "type": "array",
+                            "items":
+                            {
+                                "oneOf": [
+                                    {
+                                        "$ref": "geomprimitives.schema.json#/Solid"
+                                    },
+                                    {
+                                        "$ref": "geomprimitives.schema.json#/CompositeSurface"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "geometry"
+                    ]
+                }
+            ]
+        }
+    }
+}
