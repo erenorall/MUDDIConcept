@@ -2,7 +2,7 @@
     "type": "CityJSONExtension",
     "name": "MUDDI",
     "description": "Extension for model for underground data definition and integration including objects, assets and legal spaces.",
-    "url": "https://raw.githubusercontent.com/erenorall/cityjson-extension-muddi/main/MUDDI.ext.json",
+    "url": "https://raw.githubusercontent.com/erenorall/MUDDIConcept/main/extension/MUDDI.ext.json",
     "version": "1.0",
     "versionCityJSON": "2.0",
 
