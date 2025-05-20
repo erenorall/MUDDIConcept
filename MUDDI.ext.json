@@ -4,6 +4,7 @@
     "description": "Extension for model for underground data definition and integration including objects, assets and legal spaces.",
     "url": "https://raw.githubusercontent.com/erenorall/MUDDIConcept/main/MUDDI.ext.json",
     "version": "1.0",
+    "extraAttributes": {},
     "versionCityJSON": "2.0",
 
     "extraCityObjects":
