@@ -9,35 +9,12 @@
 
     "extraCityObjects":
     {
-        "+MUDDIObject":
-        {
-            "allOf": [
-                {
-                    "$ref": "cityobjects.schema.json#/_AbstractCityObject"
-                },
-                {
-                    "properties":
-                    {
-                        "attributes":
-                        {
-                            "type": "object",
-                            "properties":
-                            {
-                                "objectID": { "type": "string" },
-                                "recordID": { "type": "string" },
-                                "systemID": { "type": "string" }
-                            }
-                        }
-                    }
-                }
-            ]
-        },
 
         "+MUDDIAsset":
         {
             "allOf": [
                 {
-                    "$ref": "#/extraCityObjects/+MUDDIObject"
+                    "$ref": "cityobjects.schema.json#/_AbstractCityObject"
                 },
                 {
                     "properties":
@@ -98,7 +75,7 @@
         {
             "allOf": [
                 {
-                    "$ref": "#/extraCityObjects/+MUDDIObject"
+                    "$ref": "cityobjects.schema.json#/_AbstractCityObject"
                 },
                 {
                     "properties":
