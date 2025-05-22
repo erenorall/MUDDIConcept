@@ -9,7 +9,6 @@
 
     "extraCityObjects":
     {
-
         "+MUDDIAsset":
         {
             "allOf": [
@@ -30,21 +29,27 @@
                             "type": "object",
                             "properties":
                             {
-                                "diameter": { "type": "number" },
-                                "elevation": { "type": "number" },
-                                "assetOwnerID":
-                                {
-                                    "type": "string",
-                                    "enum": [
-                                        "municipality",
-                                        "government",
-                                        "private"
-                                    ]
+                                "Range_m": {
+                                    "type": "number"
                                 },
-                                "AssetID": { "type": "number" },
-                                "objectID": { "type": "string" },
-                                "recordID": { "type": "string" },
-                                "systemID": { "type": "string" }
+                                "Elevation_m": {
+                                    "type": "number"
+                                },
+                                "assetOwnerID": {
+                                    "type": "string"
+                                },
+                                "AssetID": {
+                                    "type": "number"
+                                },
+                                "objectID": {
+                                    "type": "string"
+                                },
+                                "recordID": {
+                                    "type": "string"
+                                },
+                                "systemID": {
+                                    "type": "string"
+                                }
                             }
                         },
                         "geometry":
@@ -54,10 +59,22 @@
                             {
                                 "oneOf": [
                                     {
-                                        "$ref": "geomprimitives.schema.json#/Solid"
+                                        "$ref": "geomprimitives.schema.json#/MultiLineString"
                                     },
                                     {
                                         "$ref": "geomprimitives.schema.json#/MultiSurface"
+                                    },
+                                    {
+                                        "$ref": "geomprimitives.schema.json#/CompositeSurface"
+                                    },
+                                    {
+                                        "$ref": "geomprimitives.schema.json#/Solid"
+                                    },
+                                    {
+                                        "$ref": "geomprimitives.schema.json#/CompositeSolid"
+                                    },
+                                    {
+                                        "$ref": "geomprimitives.schema.json#/MultiSolid"
                                     }
                                 ]
                             }
@@ -91,14 +108,30 @@
                             "type": "object",
                             "properties":
                             {
-                                "extent": { "type": "string" },
-                                "legalBuffer": { "type": "number" },
-                                "spaceType": { "type": "string" },
-                                "legalBasis": { "type": "number" },
-                                "relatedAssetID": { "type": "string" },
-                                "objectID": { "type": "string" },
-                                "recordID": { "type": "string" },
-                                "systemID": { "type": "string" }
+                                "extent": {
+                                    "type": "string"
+                                },
+                                "legalBuffer": {
+                                    "type": "number"
+                                },
+                                "spaceType": {
+                                    "type": "string"
+                                },
+                                "legalBasis": {
+                                    "type": "number"
+                                },
+                                "relatedAssetID": {
+                                    "type": "string"
+                                },
+                                "objectID": {
+                                    "type": "string"
+                                },
+                                "recordID": {
+                                    "type": "string"
+                                },
+                                "systemID": {
+                                    "type": "string"
+                                }
                             }
                         },
                         "geometry":
@@ -108,10 +141,22 @@
                             {
                                 "oneOf": [
                                     {
-                                        "$ref": "geomprimitives.schema.json#/Solid"
+                                        "$ref": "geomprimitives.schema.json#/MultiLineString"
+                                    },
+                                    {
+                                        "$ref": "geomprimitives.schema.json#/MultiSurface"
                                     },
                                     {
                                         "$ref": "geomprimitives.schema.json#/CompositeSurface"
+                                    },
+                                    {
+                                        "$ref": "geomprimitives.schema.json#/Solid"
+                                    },
+                                    {
+                                        "$ref": "geomprimitives.schema.json#/CompositeSolid"
+                                    },
+                                    {
+                                        "$ref": "geomprimitives.schema.json#/MultiSolid"
                                     }
                                 ]
                             }
